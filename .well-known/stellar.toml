@@ -15,7 +15,7 @@ ORG_SUPPORT_EMAIL = "LMNR013@GMAIL.COM"
 FEDERATION_SERVER = "https://federation.thelumenaire.com/federation"
 AUTH_SERVER = "https://auth.theluminaire.com/auth"
 
-# Currencies
+# Currencies - Primary Issuer
 [[CURRENCIES]]
 code = "LMNR"
 issuer = "GALUVE2YREE6NU4T2746XL7XORCEY5NVDJ7WADGWANUZWQJZ3PTP5PHB"
@@ -32,10 +32,24 @@ anchor_asset_type = "crypto"
 conditions = "No ICO, no pre-sale, 100% fair launches, ZERO token allocation"
 home_domain = "https://thelumenaire.com"
 
-# LMNR Supply Information
+# Currencies - Secondary Issuer
 [[CURRENCIES]]
 code = "LMNR"
-issuer = "GALUVE2YREE6NU4T2746XL7XORCEY5NVDJ7WADGWANUZWQJZ3PTP5PHB"
+issuer = "GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL"
+status = "live"
+display_decimals = 7
+name = "LUMENAIRE"
+desc = "Lumenaire is the signal in the noise—clean, elevated, untouchable. Not just a meme… a Utilimeme—where purpose meets presence. STELLAR the infrastructure. LUMENAIRE is the culture. A symbol of ascension, clarity, and next-level awareness. Not hype—light."
+image = "https://raw.githubusercontent.com/XLMNR/LUMENAIRE/main/lmnr-logo.png"
+fixed_number = 0
+max_number = 0
+is_unlimited = false
+is_asset_anchored = false
+anchor_asset_type = "crypto"
+conditions = "No ICO, no pre-sale, 100% fair launches, ZERO token allocation"
+home_domain = "https://thelumenaire.com"
+
+# LMNR Supply Information
 supply_info = "DEFLATIONARY - Fair launch, community-driven, zero privileged allocation"
 
 # Optional: Add principals/team members
