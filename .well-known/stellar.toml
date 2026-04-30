@@ -1,47 +1,30 @@
 NETWORK_PASSPHRASE = "Public Global Stellar Network ; September 2015"
 HORIZON_URL = "https://horizon.stellar.org"
 
-# Organization Information
 ORG_NAME = "Lumenaire"
 ORG_LOGO = "https://raw.githubusercontent.com/XLMNR/LUMENAIRE/main/logo.png"
 ORG_URL = "https://thelumenaire.com"
-ORG_DESCRIPTION = "Lumenaire is the signal in the noise—clean, elevated, untouchable. Not just a meme… a Utilimeme—where purpose meets presence. STELLAR the infrastructure. LUMENAIRE is the culture. A symbol of ascension, clarity, and next-level awareness. Not hype—light."
+ORG_DESCRIPTION = "Lumenaire is the signal in the noise..."
 ORG_TWITTER = "https://x.com/X_LMNR"
 ORG_TELEGRAM = "https://t.me/X_LMNR"
 ORG_GITHUB = "https://github.com/XLMNR"
 ORG_SUPPORT_EMAIL = "LMNR013@GMAIL.COM"
 
-# Organization Compliance
 FEDERATION_SERVER = "https://federation.thelumenaire.com/federation"
-AUTH_SERVER = "https://auth.theluminaire.com/auth"
+AUTH_SERVER = "https://auth.thelumenaire.com/auth"
 
-# Currencies - Primary Issuer
 [[CURRENCIES]]
 code = "LMNR"
 issuer = "GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL"
 status = "live"
 display_decimals = 7
 name = "LUMENAIRE"
-desc = "Lumenaire is the signal in the noise—clean, elevated, untouchable. Not just a meme… a Utilimeme—where purpose meets presence. STELLAR the infrastructure. LUMENAIRE is the culture. A symbol of ascension, clarity, and next-level awareness. Not hype—light."
+desc = "Lumenaire is the signal in the noise..."
 image = "https://raw.githubusercontent.com/XLMNR/LUMENAIRE/main/lmnr-logo.png"
 fixed_number = 0
 max_number = 0
-is_unlimited = false
+is_unlimited = true
 is_asset_anchored = false
 anchor_asset_type = "crypto"
 conditions = "No ICO, no pre-sale, 100% fair launches, ZERO token allocation"
-home_domain = "https://thelumenaire.com"
-
-# LMNR Supply Information
-supply_info = "DEFLATIONARY - Fair launch, community-driven, zero privileged allocation"
-
-# Optional: Add principals/team members
-# [[PRINCIPALS]]
-# name = "Founder"
-# email = "LMNR013@GMAIL.COM"
-# twitter = "https://x.com/X_LMNR"
-
-# CORS Configuration Note
-# Ensure your web server is configured with CORS headers:
-# Access-Control-Allow-Origin: *
-# This allows Stellar clients to fetch this stellar.toml file
+home_domain = "thelumenaire.com"
