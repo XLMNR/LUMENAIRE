@@ -17,7 +17,7 @@ ORG_OFFICIAL_EMAIL="LMNR013@gmail.com"
 [[CURRENCIES]]
 code="xLMNR"
 issuer="GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL"
-is_asset_anchored="false"
+is_asset_anchored=false
 display_decimals=7
 name="Lumenaire v2"
 desc="Built on Stellar. Powered by conviction! Lumenaire isn’t just a token..  it’s the culture layer of the chain. ⚡ While others build infrastructure… we build movement. XLM moves value. LMNR moves people.."
