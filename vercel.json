@@ -1,7 +1,8 @@
 {
   "version": 2,
-  "public": true,
-  "cleanUrls": true,
+  "builds": [
+    { "src": "**", "use": "@vercel/static" }
+  ],
   "headers": [
     {
       "source": "/.well-known/stellar.toml",
