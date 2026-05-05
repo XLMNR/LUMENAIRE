@@ -1,30 +1,31 @@
-NETWORK_PASSPHRASE = "Public Global Stellar Network ; September 2015"
-HORIZON_URL = "https://horizon.stellar.org"
+VERSION="2.3.0"
 
-ORG_NAME = "Lumenaire"
-ORG_LOGO = "https://raw.githubusercontent.com/XLMNR/LUMENAIRE/main/logo.png"
-ORG_URL = "https://thelumenaire.com"
-ORG_DESCRIPTION = "Lumenaire is the signal in the noise..."
-ORG_TWITTER = "https://x.com/X_LMNR"
-ORG_TELEGRAM = "https://t.me/X_LMNR"
-ORG_GITHUB = "https://github.com/XLMNR"
-ORG_SUPPORT_EMAIL = "LMNR013@GMAIL.COM"
+NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
 
-FEDERATION_SERVER = "https://federation.thelumenaire.com/federation"
-AUTH_SERVER = "https://auth.thelumenaire.com/auth"
+ACCOUNTS=[
+"GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL"
+]
+
+[DOCUMENTATION]
+ORG_NAME="Lumenaire "
+ORG_URL="https://thelumenaire.com"
+ORG_LOGO="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-FM9jrpQ1q7uNnzhoHwOzZEmeYNeuKA.png"
+ORG_DESCRIPTION="Stellar is the infrastructure. Lumenaire is the culture."
+ORG_TWITTER="https://twitter.com/X_LMNR"
+ORG_OFFICIAL_EMAIL="LMNR013@gmail.com"
 
 [[CURRENCIES]]
-code = "LMNR"
-issuer = "GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL"
-status = "live"
-display_decimals = 7
-name = "LUMENAIRE"
-desc = "Lumenaire is the signal in the noise..."
-image = "https://raw.githubusercontent.com/XLMNR/LUMENAIRE/main/lmnr-logo.png"
-fixed_number = 0
-max_number = 0
-is_unlimited = true
-is_asset_anchored = false
-anchor_asset_type = "crypto"
-conditions = "No ICO, no pre-sale, 100% fair launches, ZERO token allocation"
-home_domain = "thelumenaire.com"
+code="xLMNR"
+issuer="GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL"
+is_asset_anchored=false"
+display_decimals=7
+name="Lumenaire v2"
+desc="Built on Stellar. Powered by conviction! Lumenaire isn’t just a token..  it’s the culture layer of the chain. ⚡ While others build infrastructure… we build movement. XLM moves value. LMNR moves people.."
+conditions="LMNR is a community token with no intrinsic value or expectation of profit."
+image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-FM9jrpQ1q7uNnzhoHwOzZEmeYNeuKA.png"
+status="live"
+
+[[PRINCIPALS]]
+email="LMNR013@gmail.com"
+twitter="https://twitter.com/X_LMNR"
+telegram="https://t.me/X_LMNR"
