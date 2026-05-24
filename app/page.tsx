@@ -15,13 +15,14 @@ export default function HomePage() {
       <div className="relative z-10 flex flex-col items-center text-center gap-6 max-w-5xl px-4">
         <div className="relative">
           <Image
-            src="/images/xLMNRnoBG.png"
-            alt="LUMENAIRE mascot"
-            width={256}
-            height={256}
+            src="/images/xlmnr-hero.jpg"
+            alt="xLMNR — Lumenaire mascot"
+            width={400}
+            height={512}
             priority
             className="animate-float-slow"
             style={{
+              mixBlendMode: "screen",
               filter:
                 "drop-shadow(0 0 28px rgba(168,85,247,0.55)) drop-shadow(0 0 60px rgba(34,211,238,0.25))",
             }}
