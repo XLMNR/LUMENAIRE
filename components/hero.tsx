@@ -73,10 +73,14 @@ export function Hero() {
           $xLMNR
         </div>
 
-        <p className="text-xl text-purple-100 max-w-2xl text-pretty">
-          The deflationary token powering the future of decentralized finance on
-          Stellar.
-        </p>
+        <div className="mt-2 flex flex-col gap-1 text-2xl md:text-3xl font-extrabold tracking-wider leading-tight text-pretty uppercase">
+          <span className="text-cyan-300">
+            Stellar moves the money.
+          </span>
+          <span className="text-white">
+            Lumenaire moves the people.
+          </span>
+        </div>
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2">
           <button
