@@ -10,6 +10,19 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
       },
+      colors: {
+        lmnr: {
+          50: "#f0f4ff",
+          100: "#dbe4ff",
+          200: "#bac8ff",
+          400: "#748ffc",
+          500: "#4c6ef5",
+          600: "#3b5bdb",
+          700: "#364fc7",
+          900: "#1c2a5e",
+          950: "#0f172a",
+        },
+      },
       keyframes: {
         twinkle: {
           "0%, 100%": { opacity: "0.2", transform: "scale(0.9)" },

@@ -1,9 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight, Coins, TrendingUp, Zap } from "lucide-react";
 import { smoothJumpTo } from "@/lib/scroll";
 
-const CARDS = [
+type Card = {
+  Icon: typeof Zap;
+  title: string;
+  body: string;
+  href?: string;
+};
+
+const CARDS: Card[] = [
   {
     Icon: Zap,
     title: "DeFi Platform",
@@ -13,13 +21,14 @@ const CARDS = [
     Icon: Coins,
     title: "LP Staking",
     body: "Stake your SDEX liquidity-pool positions and earn $xLMNR rewards continuously, settled on-chain.",
+    href: "/staking",
   },
   {
     Icon: TrendingUp,
     title: "Higher Rewards",
     body: "Superior returns compared to current DeFi platforms, paid in $xLMNR.",
   },
-] as const;
+];
 
 export function Features() {
   return (
@@ -46,18 +55,35 @@ export function Features() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {CARDS.map(({ Icon, title, body }) => (
-            <div
-              key={title}
-              className="group bg-purple-900/30 border border-purple-500/30 backdrop-blur-sm rounded-lg p-7 hover:border-cyan-400/60 hover:bg-purple-900/40 transition"
-            >
-              <div className="h-12 w-12 rounded-md grid place-items-center bg-cyan-400/10 ring-1 ring-cyan-400/30 group-hover:bg-cyan-400/20 transition">
-                <Icon className="h-7 w-7 text-cyan-400" />
+          {CARDS.map(({ Icon, title, body, href }) => {
+            const inner = (
+              <>
+                <div className="h-12 w-12 rounded-md grid place-items-center bg-cyan-400/10 ring-1 ring-cyan-400/30 group-hover:bg-cyan-400/20 transition">
+                  <Icon className="h-7 w-7 text-cyan-400" />
+                </div>
+                <h3 className="mt-5 text-xl font-bold text-white">{title}</h3>
+                <p className="mt-2 text-purple-200 leading-relaxed">{body}</p>
+                {href && (
+                  <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300 group-hover:text-cyan-200 transition">
+                    Open <ArrowRight className="h-4 w-4" />
+                  </div>
+                )}
+              </>
+            );
+
+            const cardClasses =
+              "group block bg-purple-900/30 border border-purple-500/30 backdrop-blur-sm rounded-lg p-7 hover:border-cyan-400/60 hover:bg-purple-900/40 transition";
+
+            return href ? (
+              <Link key={title} href={href} className={cardClasses}>
+                {inner}
+              </Link>
+            ) : (
+              <div key={title} className={cardClasses}>
+                {inner}
               </div>
-              <h3 className="mt-5 text-xl font-bold text-white">{title}</h3>
-              <p className="mt-2 text-purple-200 leading-relaxed">{body}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
