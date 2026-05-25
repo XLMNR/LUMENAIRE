@@ -4,31 +4,19 @@
   position: relative;
   min-height: 100vh;
   color: rgb(243 244 246);
-  background: #050a14;
-}
-
-.staking-root::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background: url("/bg-lmnr.jpg") center top / cover no-repeat;
-  opacity: 0.45;
-  pointer-events: none;
-}
-
-.staking-root::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    to bottom,
-    rgba(5, 10, 20, 0.1) 0%,
-    rgba(5, 10, 20, 0.4) 50%,
-    rgba(5, 10, 20, 0.7) 100%
-  );
-  pointer-events: none;
+  background-color: #050a14;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(5, 10, 20, 0.55) 0%,
+      rgba(5, 10, 20, 0.65) 50%,
+      rgba(5, 10, 20, 0.75) 100%
+    ),
+    url("/bg-lmnr.jpg");
+  background-position: center top, center top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
 }
 
 /* Stellar Wallets Kit modal — hide scrollbars (lifted from staking-site globals) */
