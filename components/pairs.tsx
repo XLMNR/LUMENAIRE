@@ -51,7 +51,7 @@ async function getTopPairs(): Promise<TopPair[]> {
       })
       .filter((p): p is Omit<TopPair, "rank"> => p !== null)
       .sort((a, b) => b.xlmnrAmount - a.xlmnrAmount)
-      .slice(0, 10)
+      .slice(0, 20)
       .map((p, i) => ({ ...p, rank: i + 1 }));
   } catch {
     return [];
