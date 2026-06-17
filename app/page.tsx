@@ -2,6 +2,7 @@ import { SiteNav } from "@/components/site-nav";
 import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
 import { Tokenomics } from "@/components/tokenomics";
+import { Ascension } from "@/components/ascension";
 import { Roadmap } from "@/components/roadmap";
 
 export default function HomePage() {
@@ -12,6 +13,7 @@ export default function HomePage() {
         <Hero />
         <Features />
         <Tokenomics />
+        <Ascension />
         <Roadmap />
       </main>
     </>
