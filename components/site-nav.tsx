@@ -13,7 +13,7 @@ const NAV_LINKS: NavLink[] = [
   { id: "about", label: "About" },
   { id: "tokenomics", label: "Tokenomics" },
   { id: "roadmap", label: "Roadmap" },
-  { id: "trade", label: "Trade" },
+  { id: "pairs", label: "Pairs" },
   { id: "journey", label: "Journey" },
   { id: "staking", label: "Staking", href: "/staking" },
 ];
@@ -105,7 +105,7 @@ export function SiteNav() {
 
         <div className="hidden md:flex items-center gap-2">
           <button
-            onClick={() => onJump("trade")}
+            onClick={() => onJump("pairs")}
             className="px-3.5 py-1.5 rounded-md text-sm font-bold bg-purple-500 hover:bg-purple-400 text-black transition"
           >
             Buy $xLMNR
@@ -154,7 +154,7 @@ export function SiteNav() {
             })}
             <button
               onClick={() => {
-                onJump("trade");
+                onJump("pairs");
                 setOpen(false);
               }}
               className="mt-2 px-3 py-2 rounded-md text-sm font-bold bg-purple-500 text-black"

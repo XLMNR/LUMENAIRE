@@ -84,7 +84,7 @@ export function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2">
           <button
-            onClick={() => smoothJumpTo("trade")}
+            onClick={() => smoothJumpTo("pairs")}
             className="px-6 py-3 rounded-md bg-purple-500 hover:bg-purple-400 active:scale-[0.98] text-black font-bold transition shadow-lg shadow-purple-900/40"
           >
             Buy $xLMNR
