@@ -22,8 +22,8 @@ const STATS: Stat[] = [
   },
   {
     Icon: TrendingUp,
-    value: "3 Pools",
-    label: "SDEX Liquidity",
+    value: "Liquidity Provision",
+    label: "Rewarded Staking Pools",
     sub: "XLM · SHX · VELO",
   },
   {
@@ -61,7 +61,12 @@ export function Tokenomics() {
               <div className="h-11 w-11 rounded-md grid place-items-center bg-cyan-400/10 ring-1 ring-cyan-400/30">
                 <Icon className="h-6 w-6 text-cyan-400" />
               </div>
-              <div className="mt-5 text-3xl font-extrabold text-white tracking-tight">
+              <div
+                className={
+                  "mt-5 font-extrabold text-white tracking-tight leading-tight " +
+                  (value.length > 10 ? "text-2xl" : "text-3xl")
+                }
+              >
                 {value}
               </div>
               <div className="mt-1 text-[11px] uppercase tracking-[0.2em] text-purple-300 font-semibold">
