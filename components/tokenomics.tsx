@@ -10,7 +10,7 @@ type Stat = {
 const STATS: Stat[] = [
   {
     Icon: Coins,
-    value: "400M",
+    value: "333M",
     label: "Max Supply",
     sub: "$xLMNR",
   },
@@ -46,7 +46,7 @@ export function Tokenomics() {
             Engineered for Scarcity
           </h2>
           <p className="mt-5 text-xl text-purple-200 text-pretty">
-            A fixed max supply of 400M $xLMNR, paired with on-chain buybacks
+            A fixed max supply of 333M $xLMNR, paired with on-chain buybacks
             and burns on Stellar — built for compounding scarcity, not endless
             emission.
           </p>

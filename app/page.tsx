@@ -5,6 +5,8 @@ import { Tokenomics } from "@/components/tokenomics";
 import { Pairs } from "@/components/pairs";
 import { Ascension } from "@/components/ascension";
 import { Roadmap } from "@/components/roadmap";
+import { Journey } from "@/components/journey";
+import { SiteFooter } from "@/components/site-footer";
 
 export default function HomePage() {
   return (
@@ -17,7 +19,9 @@ export default function HomePage() {
         <Pairs />
         <Ascension />
         <Roadmap />
+        <Journey />
       </main>
+      <SiteFooter />
     </>
   );
 }

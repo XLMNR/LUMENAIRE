@@ -107,7 +107,7 @@ export function Hero() {
           <span className="text-purple-400">•</span>
           <span>Deflationary</span>
           <span className="text-purple-400">•</span>
-          <span>400M Max Supply</span>
+          <span>333M Max Supply</span>
         </div>
 
         <button
