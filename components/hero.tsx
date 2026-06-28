@@ -82,13 +82,21 @@ export function Hero() {
           </span>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mt-2">
           <button
             onClick={() => smoothJumpTo("pairs")}
             className="px-6 py-3 rounded-md bg-purple-500 hover:bg-purple-400 active:scale-[0.98] text-black font-bold transition shadow-lg shadow-purple-900/40"
           >
             Buy $xLMNR
           </button>
+          <a
+            href="https://stellar-drip.base44.app/faucet/6a03258f91ecc4e3102fff70"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 rounded-md border-2 border-orange-400 text-orange-300 hover:bg-orange-400/10 hover:text-orange-200 active:scale-[0.98] font-semibold transition"
+          >
+            Claim Free xLMNR
+          </a>
           <a
             href="https://twitter.com/X_LMNR"
             target="_blank"
