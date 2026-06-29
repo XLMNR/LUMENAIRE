@@ -12,9 +12,10 @@ const NAV_LINKS: NavLink[] = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "tokenomics", label: "Tokenomics" },
-  { id: "roadmap", label: "Roadmap" },
   { id: "pairs", label: "Pairs" },
+  { id: "roadmap", label: "Roadmap" },
   { id: "journey", label: "Journey" },
+  { id: "collabs", label: "Collabs", href: "/collaborations" },
   { id: "staking", label: "Staking", href: "/staking" },
 ];
 
