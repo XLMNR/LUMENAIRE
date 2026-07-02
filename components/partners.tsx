@@ -1,5 +1,5 @@
 import {
-  Droplets,
+  Hammer,
   CreditCard,
   Sparkles,
   Wrench,
@@ -13,17 +13,17 @@ type Partner = {
   body: string;
   href?: string;
   cta?: string;
-  Icon: typeof Droplets;
+  Icon: typeof Hammer;
 };
 
 const PARTNERS: Partner[] = [
   {
-    name: "Stellar Drip",
-    role: "Distribution Partner",
-    body: "A decentralized community faucet for distributing and claiming Stellar assets with automated daily distribution.",
+    name: "Stellar Forge",
+    role: "Community Tooling Partner",
+    body: "Community-built tools for the Stellar ecosystem. Home of Stellar Drip — a decentralized faucet for automated daily token distribution.",
     href: "https://stellar-drip.base44.app/faucet/6a03258f91ecc4e3102fff70",
     cta: "Claim Free xLMNR",
-    Icon: Droplets,
+    Icon: Hammer,
   },
   {
     name: "ACT",

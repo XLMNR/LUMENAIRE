@@ -1,4 +1,4 @@
-import { Twitter } from "lucide-react";
+import { Twitter, Send } from "lucide-react";
 import { Logo } from "./logo";
 
 export function SiteFooter() {
@@ -13,15 +13,26 @@ export function SiteFooter() {
           the crowd arrives.
         </p>
 
-        <a
-          href="https://twitter.com/X_LMNR"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-md border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 active:scale-[0.98] font-semibold transition"
-        >
-          <Twitter className="h-4 w-4" />
-          Follow on X
-        </a>
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a
+            href="https://twitter.com/X_LMNR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 active:scale-[0.98] font-semibold transition"
+          >
+            <Twitter className="h-4 w-4" />
+            Follow on X
+          </a>
+          <a
+            href="https://t.me/X_LMNR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 active:scale-[0.98] font-semibold transition"
+          >
+            <Send className="h-4 w-4" />
+            Follow on Telegram
+          </a>
+        </div>
 
         <div className="mt-10 border-t border-purple-500/20 pt-8 flex flex-col items-center gap-3">
           <div className="flex items-center gap-3">
