@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./logo";
 import { smoothJumpTo } from "@/lib/scroll";
@@ -19,12 +20,19 @@ const NAV_LINKS: NavLink[] = [
   { id: "staking", label: "Staking", href: "/staking" },
 ];
 
+// Route to `/#<id>` (or `/` for the home id) when a scroll target is clicked
+// from a page other than the home page.
+function scrollTargetHref(id: string): string {
+  return id === "home" ? "/" : `/#${id}`;
+}
+
 export function SiteNav() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string>("home");
-
-  const onJump = smoothJumpTo;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -34,6 +42,10 @@ export function SiteNav() {
   }, []);
 
   useEffect(() => {
+    // Section-observer only meaningful on the home page — the sections
+    // don't exist on other routes.
+    if (!isHome) return;
+
     const ids = NAV_LINKS.filter((l) => !l.href).map((l) => l.id);
     const visibility = new Map<string, number>();
     const observers: IntersectionObserver[] = [];
@@ -56,13 +68,56 @@ export function SiteNav() {
           });
           if (bestVal > 0.1) setActive(best);
         },
-        { threshold: [0, 0.25, 0.5, 0.75, 1] }
+        { threshold: [0, 0.25, 0.5, 0.75, 1] },
       );
       io.observe(el);
       observers.push(io);
     });
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [isHome]);
+
+  // Renders a scroll-target link. On the home page it's a button that
+  // smooth-scrolls in place; on other pages it's a Link back to /#<id>.
+  function renderScrollTarget(
+    l: NavLink,
+    cls: string,
+    onClickAfter?: () => void,
+  ) {
+    if (isHome) {
+      return (
+        <button
+          key={l.id}
+          onClick={() => {
+            smoothJumpTo(l.id);
+            onClickAfter?.();
+          }}
+          className={cls}
+        >
+          {l.label}
+        </button>
+      );
+    }
+    return (
+      <Link
+        key={l.id}
+        href={scrollTargetHref(l.id)}
+        onClick={onClickAfter}
+        className={cls}
+      >
+        {l.label}
+      </Link>
+    );
+  }
+
+  // Logo/wordmark on the left — behaves like the "Home" scroll target.
+  const brand = (
+    <>
+      <Logo size={36} />
+      <span className="font-bold text-white tracking-tight text-lg sm:text-xl group-hover:text-cyan-200 transition">
+        LUMENAIRE
+      </span>
+    </>
+  );
 
   return (
     <nav
@@ -74,15 +129,18 @@ export function SiteNav() {
       }
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <button
-          onClick={() => onJump("home")}
-          className="flex items-center gap-3 group"
-        >
-          <Logo size={36} />
-          <span className="font-bold text-white tracking-tight text-lg sm:text-xl group-hover:text-cyan-200 transition">
-            LUMENAIRE
-          </span>
-        </button>
+        {isHome ? (
+          <button
+            onClick={() => smoothJumpTo("home")}
+            className="flex items-center gap-3 group"
+          >
+            {brand}
+          </button>
+        ) : (
+          <Link href="/" className="flex items-center gap-3 group">
+            {brand}
+          </Link>
+        )}
 
         <div className="hidden md:flex items-center gap-1">
           {NAV_LINKS.map((l) => {
@@ -92,25 +150,33 @@ export function SiteNav() {
               (isActive
                 ? "text-cyan-300 bg-purple-500/20 ring-1 ring-purple-400/30"
                 : "text-purple-100 hover:text-white hover:bg-white/5");
-            return l.href ? (
-              <Link key={l.id} href={l.href} className={cls}>
-                {l.label}
-              </Link>
-            ) : (
-              <button key={l.id} onClick={() => onJump(l.id)} className={cls}>
-                {l.label}
-              </button>
-            );
+            if (l.href) {
+              return (
+                <Link key={l.id} href={l.href} className={cls}>
+                  {l.label}
+                </Link>
+              );
+            }
+            return renderScrollTarget(l, cls);
           })}
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          <button
-            onClick={() => onJump("pairs")}
-            className="px-3.5 py-1.5 rounded-md text-sm font-bold bg-purple-500 hover:bg-purple-400 text-black transition"
-          >
-            Buy $xLMNR
-          </button>
+          {isHome ? (
+            <button
+              onClick={() => smoothJumpTo("pairs")}
+              className="px-3.5 py-1.5 rounded-md text-sm font-bold bg-purple-500 hover:bg-purple-400 text-black transition"
+            >
+              Buy $xLMNR
+            </button>
+          ) : (
+            <Link
+              href="/#pairs"
+              className="px-3.5 py-1.5 rounded-md text-sm font-bold bg-purple-500 hover:bg-purple-400 text-black transition"
+            >
+              Buy $xLMNR
+            </Link>
+          )}
         </div>
 
         <button
@@ -131,37 +197,39 @@ export function SiteNav() {
                 (active === l.id
                   ? "text-cyan-300 bg-purple-500/20"
                   : "text-purple-100 hover:bg-white/5");
-              return l.href ? (
-                <Link
-                  key={l.id}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className={cls}
-                >
-                  {l.label}
-                </Link>
-              ) : (
-                <button
-                  key={l.id}
-                  onClick={() => {
-                    onJump(l.id);
-                    setOpen(false);
-                  }}
-                  className={cls}
-                >
-                  {l.label}
-                </button>
-              );
+              if (l.href) {
+                return (
+                  <Link
+                    key={l.id}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className={cls}
+                  >
+                    {l.label}
+                  </Link>
+                );
+              }
+              return renderScrollTarget(l, cls, () => setOpen(false));
             })}
-            <button
-              onClick={() => {
-                onJump("pairs");
-                setOpen(false);
-              }}
-              className="mt-2 px-3 py-2 rounded-md text-sm font-bold bg-purple-500 text-black"
-            >
-              Buy $xLMNR
-            </button>
+            {isHome ? (
+              <button
+                onClick={() => {
+                  smoothJumpTo("pairs");
+                  setOpen(false);
+                }}
+                className="mt-2 px-3 py-2 rounded-md text-sm font-bold bg-purple-500 text-black"
+              >
+                Buy $xLMNR
+              </button>
+            ) : (
+              <Link
+                href="/#pairs"
+                onClick={() => setOpen(false)}
+                className="mt-2 px-3 py-2 rounded-md text-sm font-bold bg-purple-500 text-black"
+              >
+                Buy $xLMNR
+              </Link>
+            )}
           </div>
         </div>
       )}
