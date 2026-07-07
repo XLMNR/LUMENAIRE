@@ -5,17 +5,16 @@
   min-height: 100vh;
   color: rgb(243 244 246);
   background-color: #050a14;
+  /* Clean dark gradient with a soft purple glow up top so the
+     infographic hero banner is the visual focal point. */
   background-image:
-    linear-gradient(
-      to bottom,
-      rgba(5, 10, 20, 0.55) 0%,
-      rgba(5, 10, 20, 0.65) 50%,
-      rgba(5, 10, 20, 0.75) 100%
+    radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      rgba(88, 28, 135, 0.35) 0%,
+      transparent 60%
     ),
-    url("/bg-lmnr.jpg");
-  background-position: center top, center top;
+    linear-gradient(to bottom, #0a0616 0%, #050a14 100%);
   background-repeat: no-repeat, no-repeat;
-  background-size: cover, cover;
   background-attachment: fixed, fixed;
 }
 

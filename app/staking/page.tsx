@@ -20,20 +20,20 @@ export default function StakingPage() {
         </div>
       )}
 
-      <div className="mb-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-        <div className="flex flex-col items-center sm:items-start">
-          <Image
-            src="/lumenaire-logo.webp"
-            alt="Lumenaire"
-            width={360}
-            height={120}
-            className="drop-shadow-[0_0_12px_rgba(0,220,180,0.3)]"
-            priority
-          />
-          <p className="mt-1 text-sm text-gray-400">
-            Stake your SDEX LP positions and earn xLMNR rewards
-          </p>
-        </div>
+      {/* Infographic hero banner */}
+      <div className="mb-8 overflow-hidden rounded-xl border border-purple-500/20 shadow-lg shadow-purple-900/40">
+        <Image
+          src="/images/staking-hero.jpg"
+          alt="Stake. Earn. xLMNR. — Lumenaire HODL & Earn. Stake your xLMNR tokens and earn rewards while supporting the future of the network. 333,000,000 max staking. How it works: 1. Connect your wallet, 2. Choose your amount and stake, 3. Collect rewards automatically. Secure, simple, and community-driven."
+          width={853}
+          height={1280}
+          className="w-full h-auto"
+          priority
+        />
+      </div>
+
+      {/* Connect wallet sits just above the live dashboard */}
+      <div className="mb-6 flex justify-center sm:justify-end">
         <ConnectWallet />
       </div>
 
