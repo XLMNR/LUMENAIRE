@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "LUMENAIRE ($LMNR) — The Future of DeFi on Stellar",
+  title: "LUMENAIRE ($xLMNR) — The Future of DeFi on Stellar",
   description:
     "The deflationary token powering the future of decentralized finance on Stellar.",
 };
