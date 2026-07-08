@@ -4,22 +4,14 @@ import { StakingDashboard } from "@/components/staking/StakingDashboard";
 import { CONTRACT_ID } from "@/lib/staking/constants";
 
 export default function StakingPage() {
-  const contractConfigured = !!CONTRACT_ID;
+  // Staking goes live only once the contract is configured via env vars
+  // (NEXT_PUBLIC_CONTRACT_ID). Until then — including the current window while
+  // the contract admin key is being rotated — show a "Coming Soon" state so no
+  // one can connect a wallet and stake against an unsecured contract.
+  const stakingLive = !!CONTRACT_ID;
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
-      {/* Migration status banner — visible until env vars are set in Vercel */}
-      {!contractConfigured && (
-        <div className="mb-6 rounded-md border border-amber-400/40 bg-amber-400/10 px-4 py-3 text-sm text-amber-200">
-          <strong className="font-bold">Staking placeholder.</strong> Contract
-          and pool config are not set in this environment. UI is wired up but
-          on-chain calls will no-op until the xLMNR contract is migrated and{" "}
-          <code className="font-mono">NEXT_PUBLIC_CONTRACT_ID</code> +{" "}
-          <code className="font-mono">POOL_CONFIG</code> are populated in
-          Vercel.
-        </div>
-      )}
-
       {/* Infographic hero banner */}
       <div className="mb-8 overflow-hidden rounded-xl border border-purple-500/20 shadow-lg shadow-purple-900/40">
         <Image
@@ -32,12 +24,35 @@ export default function StakingPage() {
         />
       </div>
 
-      {/* Connect wallet sits just above the live dashboard */}
-      <div className="mb-6 flex justify-center sm:justify-end">
-        <ConnectWallet />
-      </div>
-
-      <StakingDashboard />
+      {stakingLive ? (
+        <>
+          <div className="mb-6 flex justify-center sm:justify-end">
+            <ConnectWallet />
+          </div>
+          <StakingDashboard />
+        </>
+      ) : (
+        <div className="rounded-xl border border-purple-500/30 bg-purple-900/20 backdrop-blur-sm px-6 py-12 text-center">
+          <div className="text-xs uppercase tracking-[0.25em] text-cyan-300 font-semibold">
+            Staking
+          </div>
+          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white tracking-tight">
+            Coming Soon
+          </h2>
+          <p className="mt-4 text-purple-200 max-w-md mx-auto">
+            xLMNR LP staking is launching shortly. Stake your SDEX
+            liquidity-pool positions and earn xLMNR rewards — check back soon.
+          </p>
+          <a
+            href="https://twitter.com/X_LMNR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-md border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 font-semibold transition"
+          >
+            Follow for the launch
+          </a>
+        </div>
+      )}
 
       <footer className="mt-12 border-t border-lmnr-700/20 pt-6 text-center text-xs text-gray-500">
         <p>
