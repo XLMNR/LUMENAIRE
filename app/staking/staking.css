@@ -1,0 +1,33 @@
+/* Scoped to /staking and /admin routes only — applied via the staking layout. */
+
+.staking-root {
+  position: relative;
+  min-height: 100vh;
+  color: rgb(243 244 246);
+  background-color: #050a14;
+  /* Clean dark gradient with a soft purple glow up top so the
+     infographic hero banner is the visual focal point. */
+  background-image:
+    radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      rgba(88, 28, 135, 0.35) 0%,
+      transparent 60%
+    ),
+    linear-gradient(to bottom, #0a0616 0%, #050a14 100%);
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+}
+
+/* Stellar Wallets Kit modal — hide scrollbars (lifted from staking-site globals) */
+.staking-root div[style*="overflow: scroll"],
+.staking-root div[style*="overflow:scroll"] {
+  overflow: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.staking-root div[style*="overflow: scroll"]::-webkit-scrollbar,
+.staking-root div[style*="overflow:scroll"]::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
