@@ -9,7 +9,7 @@ ACCOUNTS=[
 [DOCUMENTATION]
 ORG_NAME="Lumenaire "
 ORG_URL="https://www.thelumenaire.com"
-ORG_LOGO="https://www.thelumenaire.com/xLMNR.png"
+ORG_LOGO="https://www.thelumenaire.com/images/xLMNR.png"
 ORG_DESCRIPTION="Stellar is the infrastructure. Lumenaire is the culture."
 ORG_TWITTER="https://twitter.com/X_LMNR"
 ORG_OFFICIAL_EMAIL="LMNR013@gmail.com"
@@ -22,7 +22,7 @@ display_decimals=7
 name="Lumenaire v2"
 desc="Built on Stellar. Powered by conviction! Lumenaire isn’t just a token..  it’s the culture layer of the chain. ⚡ While others build infrastructure… we build movement. XLM moves value. LMNR moves people.."
 conditions="LMNR is a community token with no intrinsic value or expectation of profit."
-image="https://www.thelumenaire.com/xLMNR.png"
+image="https://www.thelumenaire.com/images/xLMNR.png"
 status="live"
 
 [[PRINCIPALS]]
