@@ -2,7 +2,15 @@ VERSION="2.3.0"
 
 NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
 
-FEDERATION_SERVER="https://federation.lumenbro.com"
+# No FEDERATION_SERVER. SEP-1 wants the federation endpoint on the same host as
+# the toml, and ours ran on federation.lumenbro.com -- a different registrable
+# domain -- so Stellar Expert ignored the line and raised:
+#   "SEP service FEDERATION_SERVER ignored. URL hostname should match the
+#    home_domain."
+# The reward wallet is reachable as xLMNR-REWARDS*lobstr.co, which Lobstr hosts
+# on its own domain, so nothing is lost. To bring federation back under this
+# domain it must be served FROM thelumenaire.com (e.g. a /federation route on
+# this site), not from another domain.
 
 ACCOUNTS=[
 "GDKA6WVMFSA73BMEVKPO6WXSSWP4MPRBDJVSXLLSEVIEVH226L5RJ7NL"
