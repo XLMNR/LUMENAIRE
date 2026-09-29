@@ -21,7 +21,7 @@ const PARTNERS: Partner[] = [
     name: "Stellar Forge",
     role: "Community Tooling Partner",
     body: "Community-built tools for the Stellar ecosystem. Home of Stellar Drip — a decentralized faucet for automated daily token distribution.",
-    href: "https://stellar-drip.base44.app/faucet/6a03258f91ecc4e3102fff70",
+    href: "https://stellardrip.base44.app/faucet/6ab7b5aaad198b3634fc7560",
     cta: "Claim Free xLMNR",
     Icon: Hammer,
   },

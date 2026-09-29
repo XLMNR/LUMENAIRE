@@ -90,7 +90,7 @@ export function Hero() {
             Buy $xLMNR
           </button>
           <a
-            href="https://stellar-drip.base44.app/faucet/6a03258f91ecc4e3102fff70"
+            href="https://stellardrip.base44.app/faucet/6ab7b5aaad198b3634fc7560"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-md border-2 border-orange-400 text-orange-300 hover:bg-orange-400/10 hover:text-orange-200 active:scale-[0.98] font-semibold transition"
