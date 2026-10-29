@@ -31,7 +31,7 @@ is_asset_anchored=false
 display_decimals=7
 name="Lumenaire v2"
 desc="Built on Stellar. Powered by conviction! Lumenaire isn’t just a token..  it’s the culture layer of the chain. ⚡ While others build infrastructure… we build movement. XLM moves value. LMNR moves people.."
-conditions="LMNR is a community token with no intrinsic value or expectation of profit."
+conditions="xLMNR is a community token with no intrinsic value or expectation of profit."
 image="https://www.thelumenaire.com/images/xLMNR-icon.png"
 status="live"
 
