@@ -35,15 +35,15 @@ image="https://www.thelumenaire.com/images/xLMNR-icon.png"
 status="live"
 
 [[CURRENCIES]]
-code = "LOOT"
-issuer = "GCAOLBZBNTTNHH6CEVP5FI52BENBM6QDE4EZ5OQE22XEP347GJSVNIOD"
-name = "LUMEN-LOOT"
-display_decimals = 7
-is_asset_anchored = false
-desc = "LUMEN-LOOT is the tipping and rewards token for LUMENAIRE and collaborating projects. Built to recognize contributions, encourage participation, and reward community engagement across the Stellar ecosystem."
-conditions = "Maximum intended supply: 3,333,333,333 LOOT. This metadata does not enforce an on-chain supply cap."
-image = "https://www.thelumenaire.com/images/xLMNR-icon.png"
-status = "live"
+code="LOOT"
+issuer="GCAOLBZBNTTNHH6CEVP5FI52BENBM6QDE4EZ5OQE22XEP347GJSVNIOD"
+name="LUMEN-LOOT"
+display_decimals= 7
+is_asset_anchored= false
+desc="LUMEN-LOOT is the tipping and rewards token for LUMENAIRE and collaborating projects. Built to recognize contributions, encourage participation, and reward community engagement across the Stellar ecosystem."
+conditions="Maximum intended supply: 3,333,333,333 LOOT. This metadata does not enforce an on-chain supply cap."
+image= 
+status="TBA"
 
 [[PRINCIPALS]]
 email="LMNR013@gmail.com"
