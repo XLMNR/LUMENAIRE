@@ -42,7 +42,6 @@ display_decimals= 7
 is_asset_anchored= false
 desc="LUMEN-LOOT is the tipping and rewards token for LUMENAIRE and collaborating projects. Built to recognize contributions, encourage participation, and reward community engagement across the Stellar ecosystem."
 conditions="Maximum intended supply: 3,333,333,333 LOOT. This metadata does not enforce an on-chain supply cap."
-image= 
 status="TBA"
 
 [[PRINCIPALS]]
